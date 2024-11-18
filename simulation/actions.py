@@ -1,4 +1,7 @@
-class Action:
+from abc import ABC
+
+
+class Action(ABC):
     pass
 
 

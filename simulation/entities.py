@@ -1,8 +1,8 @@
-from abc import abstractmethod
+from abc import ABC, abstractmethod
 from random import choice
 
 
-class Entity:
+class Entity(ABC):
     pass
 
 
@@ -17,12 +17,15 @@ class Rock(Entity):
 
 
 class Tree(Entity):
-    def __repr__(self) -> str:
+    def __init__(self):
         trees = ["🌲", "🌳", "🌴"]
-        return choice(trees)
+        self.pic = choice(trees)
+
+    def __repr__(self) -> str:
+        return self.pic
 
 
-class Creature(Entity):
+class Creature(Entity, ABC):
     def __init__(self, hp: int, speed: int) -> None:
         super().__init__()
         self.hp = hp

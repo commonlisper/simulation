@@ -1,9 +1,9 @@
-from abc import abstractmethod
+from abc import ABC, abstractmethod
 
 from field import Field
 
 
-class Renderer:
+class Renderer(ABC):
     def __init__(self, field: Field) -> None:
         self.field = field
 
