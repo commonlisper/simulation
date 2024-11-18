@@ -1,6 +1,6 @@
 from abc import abstractmethod
 
-from simulation.field import Field
+from field import Field
 
 
 class Renderer:

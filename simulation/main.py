@@ -1,6 +1,6 @@
-from simulation.field import Field
-from simulation.view import ConsoleRenderer, request_field_dimensions
-from simulation.controller import Simulation
+from field import Field
+from view import ConsoleRenderer, request_field_dimensions
+from controller import Simulation
 
 
 def main() -> None:

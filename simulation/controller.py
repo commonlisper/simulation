@@ -1,4 +1,4 @@
-from simulation.actions import Action
+from actions import Action
 
 
 class Simulation:
