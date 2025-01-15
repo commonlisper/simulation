@@ -4,7 +4,7 @@ import com.github.domain.Field;
 import com.github.domain.entities.Coordinates;
 import com.github.domain.entities.Entity;
 
-public class ConsoleRenderer extends Renderer {
+public class ConsoleRenderer implements Renderer {
     private final static String EMPTY_FIELD = "-";
 
     @Override
