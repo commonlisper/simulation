@@ -7,7 +7,10 @@ import com.github.domain.entities.Tree;
 
 import java.util.Random;
 
-public class Fields {
+public final class Fields {
+    private Fields() {
+    }
+
     public static Field generateSampleField() {
         Field field = new Field(15, 10);
         Entity[] entities = new Entity[]{new Grass(), new Tree(), null};
