@@ -13,7 +13,7 @@ public final class Fields {
 
     public static Field generateSampleField() {
         Field field = new Field(15, 10);
-        Entity[] entities = new Entity[]{new Grass(), new Tree(), null};
+        Entity[] entities = new Entity[]{new Grass(), new Tree(), null, null};
         Random random = new Random();
 
         for (int i = 0; i < field.getHeight(); i++) {
