@@ -9,7 +9,7 @@ import com.github.view.Renderer;
 public class Main {
     public static void main(String[] args) {
         Field field = Fields.generateSampleField();
-        Renderer renderer = new ConsoleRenderer();
+        Renderer renderer = new ConsoleRenderer(field);
         Simulation simulation = new Simulation(field, renderer);
         simulation.start();
     }

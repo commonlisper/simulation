@@ -14,10 +14,10 @@ public class Simulation {
 
     public void start() {
         System.out.println("Simulation starts!");
-        renderer.render(field);
+        renderer.render();
     }
 
     public void stop() {
-
+        System.out.println("Simulation stops!");
     }
 }

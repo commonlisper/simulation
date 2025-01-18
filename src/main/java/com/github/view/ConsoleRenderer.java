@@ -4,11 +4,15 @@ import com.github.domain.Field;
 import com.github.domain.entities.Coordinates;
 import com.github.domain.entities.Entity;
 
-public class ConsoleRenderer implements Renderer {
+public class ConsoleRenderer extends Renderer {
     private final static String EMPTY_FIELD = "-";
 
+    public ConsoleRenderer(Field field) {
+        super(field);
+    }
+
     @Override
-    public void render(Field field) {
+    public void render() {
         StringBuilder result = new StringBuilder();
 
         for (int i = 0; i < field.getHeight(); i++) {
