@@ -20,7 +20,7 @@ public final class Fields {
             for (int j = 0; j < field.getWidth(); j++) {
                 Entity entity = entities[random.nextInt(0, entities.length)];
                 if (entity == null) continue;
-                field.addEntity(new Coordinates(i, j), entity);
+                field.add(new Coordinates(i, j), entity);
             }
         }
 

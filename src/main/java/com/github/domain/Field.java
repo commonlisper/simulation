@@ -16,7 +16,7 @@ public class Field {
         map = new HashMap<>();
     }
 
-    public void addEntity(Coordinates coordinates, Entity entity) {
+    public void add(Coordinates coordinates, Entity entity) {
         if (isValidCoordinates(coordinates)) {
             map.put(coordinates, entity);
         }
@@ -29,8 +29,12 @@ public class Field {
                 coordinates.y() < width;
     }
 
-    public Entity getEntity(Coordinates coordinates) {
-        return map.getOrDefault(coordinates, null);
+    public Entity get(Coordinates coordinates) {
+        if (isValidCoordinates(coordinates)) {
+            return map.get(coordinates);
+        }
+
+        throw new IllegalArgumentException("These are not valid coordinates!");
     }
 
     public int getWidth() {

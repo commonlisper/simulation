@@ -17,7 +17,7 @@ public class ConsoleRenderer extends Renderer {
 
         for (int i = 0; i < field.getHeight(); i++) {
             for (int j = 0; j < field.getWidth(); j++) {
-                Entity entity = field.getEntity(new Coordinates(i, j));
+                Entity entity = field.get(new Coordinates(i, j));
                 result.append(entity != null ? entity : EMPTY_FIELD).append("|");
             }
             result.append("\n");
