@@ -17,13 +17,16 @@ public class Field {
     }
 
     public void addEntity(Coordinates coordinates, Entity entity) {
-        if (isValidCoordinates(coordinates.x(), coordinates.y())) {
+        if (isValidCoordinates(coordinates)) {
             map.put(coordinates, entity);
         }
     }
 
-    private boolean isValidCoordinates(int x, int y) {
-        return x >= 0 && y >= 0 && x < height && y < width;
+    private boolean isValidCoordinates(Coordinates coordinates) {
+        return coordinates.x() >= 0 &&
+                coordinates.x() < height &&
+                coordinates.y() >= 0 &&
+                coordinates.y() < width;
     }
 
     public Entity getEntity(Coordinates coordinates) {
