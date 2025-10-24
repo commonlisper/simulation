@@ -17,9 +17,21 @@ public class Field {
     }
 
     public void put(Coordinates coordinates, Entity entity) {
-        if (isValidCoordinates(coordinates)) {
-            map.put(coordinates, entity);
-        }
+        validateCoordinates(coordinates);
+        map.put(coordinates, entity);
+    }
+
+    public Entity get(Coordinates coordinates) {
+        validateCoordinates(coordinates);
+        return map.get(coordinates);
+    }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public int getHeight() {
+        return height;
     }
 
     private boolean isValidCoordinates(Coordinates coordinates) {
@@ -29,19 +41,10 @@ public class Field {
                 coordinates.y() < width;
     }
 
-    public Entity get(Coordinates coordinates) {
-        if (isValidCoordinates(coordinates)) {
-            return map.get(coordinates);
+    private void validateCoordinates(Coordinates coordinates) {
+        if (!isValidCoordinates(coordinates)) {
+            throw new IllegalArgumentException(
+                    "These are not valid coordinates! [%d, %d]".formatted(coordinates.x(), coordinates.y()));
         }
-
-        throw new IllegalArgumentException("These are not valid coordinates!");
-    }
-
-    public int getWidth() {
-        return width;
-    }
-
-    public int getHeight() {
-        return height;
     }
 }

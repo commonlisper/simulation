@@ -13,13 +13,15 @@ public final class Fields {
 
     public static Field generateSampleField() {
         Field field = new Field(15, 10);
-        Entity[] entities = new Entity[]{new Grass(), new Tree(), null, null};
+        Entity[] entities = new Entity[] { new Grass(), new Tree(), null, null };
         Random random = new Random();
 
         for (int i = 0; i < field.getHeight(); i++) {
             for (int j = 0; j < field.getWidth(); j++) {
                 Entity entity = entities[random.nextInt(0, entities.length)];
-                if (entity == null) continue;
+                if (entity == null) {
+                    continue;
+                }
                 field.put(new Coordinates(i, j), entity);
             }
         }
