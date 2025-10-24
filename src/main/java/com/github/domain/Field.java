@@ -16,7 +16,7 @@ public class Field {
         map = new HashMap<>();
     }
 
-    public void add(Coordinates coordinates, Entity entity) {
+    public void put(Coordinates coordinates, Entity entity) {
         if (isValidCoordinates(coordinates)) {
             map.put(coordinates, entity);
         }
